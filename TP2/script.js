@@ -1,5 +1,5 @@
 // Get the taskArray from localStorage
-const taskArray = JSON.parse(localStorage.getItem("taskArray")) || [
+let taskArray = JSON.parse(localStorage.getItem("taskArray")) || [
   {
     texte: "Do homework",
     etat: "terminee",
@@ -57,6 +57,8 @@ function renderTaskGrid() {
   });
   document.querySelector(".js-tasks-list").innerHTML = todoListHTML;
 
+  displayTasksCount();
+
   // Adding eventListeners to the delete buttons
   document
     .querySelectorAll(".js-delete-button")
@@ -73,6 +75,13 @@ function renderTaskGrid() {
       finishButton.addEventListener("click", () => {
         finishTask(index);
       });
+    });
+
+  // Add an eventListener to delete all bytton
+  document
+    .querySelector(".js-delete-all-button")
+    .addEventListener("click", () => {
+      deleteAllTasks();
     });
 }
 
@@ -96,4 +105,27 @@ function finishTask(taskNumber) {
 
 function saveToLocalStorage() {
   localStorage.setItem("taskArray", JSON.stringify(taskArray));
+}
+
+function displayTasksCount() {
+  let finishedTasks = 0;
+  let unfinishedTasks = 0;
+
+  taskArray.forEach((taskObject) => {
+    if (taskObject.etat === "terminee") {
+      finishedTasks++;
+    } else {
+      unfinishedTasks++;
+    }
+  });
+
+  document.querySelector(".js-total-tasks").innerHTML = taskArray.length;
+  document.querySelector(".js-finished-tasks").innerHTML = finishedTasks;
+  document.querySelector(".js-unfinished-tasks").innerHTML = unfinishedTasks;
+}
+
+function deleteAllTasks() {
+  taskArray = [];
+  saveToLocalStorage();
+  renderTaskGrid();
 }

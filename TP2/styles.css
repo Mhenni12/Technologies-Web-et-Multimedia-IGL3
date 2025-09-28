@@ -8,6 +8,7 @@ body {
   column-gap: 10px;
   row-gap: 10px;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .todo-input-grid {
@@ -44,6 +45,12 @@ body {
   background-color: blue;
 }
 
+.delete-all-button {
+  background-color: darkred;
+  padding-right: 50px;
+  padding-left: 50px; 
+}
+
 .task-input {
   font-size: 15px;
   padding:  6px;
@@ -51,4 +58,8 @@ body {
 
 .terminee {
   text-decoration: line-through;
+}
+
+.task-counter {
+  margin-bottom: 10px;
 }
