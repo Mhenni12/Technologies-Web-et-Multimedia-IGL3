@@ -2,6 +2,28 @@ body {
   font-family: Arial;
 }
 
+.tasks-list{
+  display: grid;
+  grid-template-columns: 200px 100px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 250px 160px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.todo-input-grid {
+  margin-bottom: 10px;
+  /* originally, align-items is set to stretch */
+  align-items: stretch;
+}
+
 .task-button {
   color: white;
   border-style: none;

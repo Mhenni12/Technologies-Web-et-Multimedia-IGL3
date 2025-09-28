@@ -39,7 +39,6 @@ function renderTaskGrid() {
     const { texte, etat } = taskObject;
 
     todoListHTML += `
-    <ul class="task-row">
       <div class="text-display ${etat}">
         ${texte}
       </div>
@@ -50,7 +49,7 @@ function renderTaskGrid() {
       <button 
         class="task-button finish-button js-finish-button" 
       >Terminer</button>
-    </ul>`;
+    `;
   });
   document.querySelector(".js-tasks-list").innerHTML = todoListHTML;
 

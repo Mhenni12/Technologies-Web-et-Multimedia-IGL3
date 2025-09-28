@@ -8,13 +8,17 @@
   </head>
   <body>
     <p>Gestionnaire de Taches</p>
-    <input
-      type="text"
-      class="task-input js-task-input"
-      placeholder="Ajouter une tache"
-    />
-    <btton class="task-button add-button js-add-button">Ajouter</btton>
-    <li class="tasks-list js-tasks-list"></li>
+    <div class="todo-input-grid">
+      <input
+        type="text"
+        class="task-input js-task-input"
+        placeholder="Ajouter une tache"
+      />
+      <button class="task-button add-button js-add-button">Ajouter</button>
+    </div>
+
+    <div class="tasks-list js-tasks-list"></div>
+
     <script src="./script.js"></script>
   </body>
 </html>
