@@ -1,4 +1,5 @@
-const taskArray = [
+// Get the taskArray from localStorage
+const taskArray = JSON.parse(localStorage.getItem("taskArray")) || [
   {
     texte: "Do homework",
     etat: "terminee",
@@ -24,6 +25,9 @@ function addTask() {
   const taskObject = { texte: texte, etat: "non-terminee" };
 
   taskArray.push(taskObject);
+
+  // Save array to local storage
+  saveToLocalStorage();
 
   // Display the updated task list
   renderTaskGrid();
@@ -74,10 +78,22 @@ function renderTaskGrid() {
 
 function deleteTask(taskNumber) {
   taskArray.splice(taskNumber, 1);
+
+  // Save array to local storage
+  saveToLocalStorage();
+
   renderTaskGrid();
 }
 
 function finishTask(taskNumber) {
   taskArray[taskNumber].etat = "terminee";
+
+  // Save array to local storage
+  saveToLocalStorage();
+
   renderTaskGrid();
+}
+
+function saveToLocalStorage() {
+  localStorage.setItem("taskArray", JSON.stringify(taskArray));
 }
