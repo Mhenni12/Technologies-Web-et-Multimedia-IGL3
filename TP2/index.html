@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <p>Gestionnaire de Taches</p>
+    <div class="todo-input-grid">
+      <input
+        type="text"
+        class="task-input js-task-input"
+        placeholder="Ajouter une tache"
+      />
+      <button class="task-button add-button js-add-button">Ajouter</button>
+    </div>
+
+    <div class="task-counter">
+      Le nombre de taches terminées:
+      <span class="js-finished-tasks"></span> /
+      <span class="js-total-tasks"></span>
+    </div>
+
+    <input
+      type="text"
+      class="task-search js-task-search"
+      placeholder="Chercher une tache"
+    />
+
+    <div class="tasks-list js-tasks-list"></div>
+
+    <button class="task-button delete-all-button js-delete-all-button">
+      Tout Supprimer
+    </button>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
