@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Manager</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="./script.js"></script>
   </head>
   <body>
     <p>Todo List</p>
-    <input type="text" class="task-input" placeholder="Add a task" />
-    <btton class="add-button">Ajouter</btton>
-    <li class="tasks-list"></li>
+    <input
+      type="text"
+      class="task-input js-task-input"
+      placeholder="Add a task"
+    />
+    <btton class="add-button" onclick="AddTask()">Ajouter</btton>
+    <li class="tasks-list js-tasks-list"></li>
+    <script src="./script.js"></script>
   </body>
 </html>
