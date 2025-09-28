@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+}
+
+.add-button {
+  background-color: green;
+  color: white;
+  border-style: none;
+  padding: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.task-input {
+  font-size: 15px;
+  padding:  6px;
+}
