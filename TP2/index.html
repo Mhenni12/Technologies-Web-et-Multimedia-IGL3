@@ -17,19 +17,20 @@
       <button class="task-button add-button js-add-button">Ajouter</button>
     </div>
 
+    <div class="task-counter">
+      Le nombre de taches terminées:
+      <span class="js-finished-tasks"></span> /
+      <span class="js-total-tasks"></span>
+    </div>
+
+    <input
+      type="text"
+      class="task-search js-task-search"
+      placeholder="Chercher une tache"
+    />
+
     <div class="tasks-list js-tasks-list"></div>
 
-    <div class="task-counter">
-      <div>
-        Le nombre total des taches: <span class="js-total-tasks"></span>
-      </div>
-      <div>
-        Le nombre de taches terminées: <span class="js-finished-tasks"></span>
-      </div>
-      <div>
-        Le nombre de taches en cours: <span class="js-unfinished-tasks"></span>
-      </div>
-    </div>
     <button class="task-button delete-all-button js-delete-all-button">
       Tout Supprimer
     </button>

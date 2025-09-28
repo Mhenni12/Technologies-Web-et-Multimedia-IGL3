@@ -47,13 +47,17 @@ body {
 
 .delete-all-button {
   background-color: darkred;
-  padding-right: 50px;
-  padding-left: 50px; 
+  width: 420px;
 }
 
-.task-input {
+.task-input, .task-search {
   font-size: 15px;
   padding:  6px;
+}
+
+.task-search {
+  width: 405px;
+  margin-bottom: 10px;
 }
 
 .terminee {

@@ -10,12 +10,29 @@ let taskArray = JSON.parse(localStorage.getItem("taskArray")) || [
   },
 ];
 // Display exisiting tasks initially
-renderTaskGrid();
+renderTaskGrid(taskArray);
 
 // Adding eventListener to the add button
 const addButtonElement = document.querySelector(".js-add-button");
 addButtonElement.addEventListener("click", () => {
   addTask();
+});
+
+// Adding eventListener to the search input
+const searchElement = document.querySelector(".js-task-search");
+
+//! It won't work with arrow functions
+searchElement.addEventListener("input", function () {
+  // get the content of the input element at each key stroke
+  const content = this.value.toLowerCase();
+
+  // filter the tasks array to  get a new one
+  const filteredTasks = taskArray.filter((task) => {
+    return task.texte.toLowerCase().includes(content);
+  });
+
+  // Render the filtered list
+  renderTaskGrid(filteredTasks);
 });
 
 function addTask() {
@@ -30,16 +47,16 @@ function addTask() {
   saveToLocalStorage();
 
   // Display the updated task list
-  renderTaskGrid();
+  renderTaskGrid(taskArray);
 
   // Deleting the task from the input element after adding it
   inputElement.value = "";
 }
 
-function renderTaskGrid() {
+function renderTaskGrid(taskList) {
   let todoListHTML = "";
 
-  taskArray.forEach((taskObject) => {
+  taskList.forEach((taskObject) => {
     const { texte, etat } = taskObject;
 
     todoListHTML += `
@@ -91,7 +108,7 @@ function deleteTask(taskNumber) {
   // Save array to local storage
   saveToLocalStorage();
 
-  renderTaskGrid();
+  renderTaskGrid(taskArray);
 }
 
 function finishTask(taskNumber) {
@@ -100,7 +117,7 @@ function finishTask(taskNumber) {
   // Save array to local storage
   saveToLocalStorage();
 
-  renderTaskGrid();
+  renderTaskGrid(taskArray);
 }
 
 function saveToLocalStorage() {
@@ -109,23 +126,19 @@ function saveToLocalStorage() {
 
 function displayTasksCount() {
   let finishedTasks = 0;
-  let unfinishedTasks = 0;
 
   taskArray.forEach((taskObject) => {
     if (taskObject.etat === "terminee") {
       finishedTasks++;
-    } else {
-      unfinishedTasks++;
     }
   });
 
   document.querySelector(".js-total-tasks").innerHTML = taskArray.length;
   document.querySelector(".js-finished-tasks").innerHTML = finishedTasks;
-  document.querySelector(".js-unfinished-tasks").innerHTML = unfinishedTasks;
 }
 
 function deleteAllTasks() {
   taskArray = [];
   saveToLocalStorage();
-  renderTaskGrid();
+  renderTaskGrid(taskArray);
 }
