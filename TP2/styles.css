@@ -2,13 +2,24 @@ body {
   font-family: Arial;
 }
 
-.add-button {
-  background-color: green;
+.task-button {
   color: white;
   border-style: none;
   padding: 8px;
   font-size: 15px;
   cursor: pointer;
+}
+
+.add-button {
+  background-color: green;
+}
+
+.delete-button {
+  background-color: darkred;
+}
+
+.finish-button {
+  background-color: blue;
 }
 
 .task-input {
