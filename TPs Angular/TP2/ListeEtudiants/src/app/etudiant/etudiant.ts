@@ -12,7 +12,7 @@ import { FormsModule} from '@angular/forms';
 export class Etudiant {
   etudiant : Student={
     id:1,
-    name:'Ali Ben Saleh'
+    name:'Aziz'
   };
   lastName: string = 'Mhenni';
   average: number = 17;
