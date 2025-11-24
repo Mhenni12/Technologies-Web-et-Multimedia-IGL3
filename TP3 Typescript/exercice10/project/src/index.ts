@@ -50,5 +50,4 @@ async function main() {
 
 main().catch(err => {
   console.error("Error in demo:", err);
-  process.exit(1);
 });
