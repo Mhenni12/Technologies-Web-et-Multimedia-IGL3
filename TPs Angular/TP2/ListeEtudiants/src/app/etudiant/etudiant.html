@@ -1,0 +1,25 @@
+<h2>{{ etudiant.name }}</h2>
+<div><strong>id: </strong> {{etudiant.id}}</div>
+<div><strong>name:</strong> {{etudiant.name | uppercase}} </div>
+
+<table border="1">
+  <tr>
+    <th>Last Name</th>
+    <th>Average</th>
+  </tr>
+  <tr>
+    <td>{{ lastName }}</td>
+    <td>{{ average }}</td>
+  </tr>
+</table>
+<div><strong>Birth Date:</strong> {{ birthDate | date:'longDate' }}</div>
+<div><strong>Taux de Presence:</strong> {{ tauxPresence | percent:'1.2-2' }}</div>
+<div>
+  <strong>Argent de Poche:</strong> {{ argentDePoche | currency:'EUR':'symbol':'1.2-2' }}
+</div>
+<div>
+  <label>
+    <strong>name: </strong>
+    <input [(ngModel)]="etudiant.name" placeholder="name"/>
+  </label>
+</div>
