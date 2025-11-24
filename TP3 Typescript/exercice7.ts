@@ -7,7 +7,7 @@ console.log("Identity number:", identity<number>(42));
 console.log("Identity string:", identity<string>("Hello"));
 
 // 2. Fonction générique getFirst
-function getFirst<T>(arr: T[]): T {
+function getFirst<T>(arr: T[]): T | undefined {
   return arr[0];
 }
 
