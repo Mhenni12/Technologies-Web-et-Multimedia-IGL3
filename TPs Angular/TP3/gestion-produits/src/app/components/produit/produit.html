@@ -1,0 +1,10 @@
+<div [ngClass]="{'en-stock': enStock, 'hors-stock': !enStock}" [ngStyle]="{'opacity': enStock ? '1' : '0.5'}">
+  <h3>{{nomProduit}}</h3>
+  <p>Prix : {{ prix | currency:'EUR' }}</p>
+</div>
+<button (click)="toggleStock()">
+  {{ enStock ? 'Marquer comme Hors Stock' : 'Marquer comme En Stock' }}
+</button>
+<button (click)="ajouterProduit()" [disabled]="!enStock">
+  Ajouter au Panier
+</button>
