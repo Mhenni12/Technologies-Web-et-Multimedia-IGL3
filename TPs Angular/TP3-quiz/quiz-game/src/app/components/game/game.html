@@ -1,0 +1,20 @@
+<div class="game-container">
+  <h2>Quiz</h2>
+
+  <div class="question-list">
+    <div *ngFor="let q of questions" class="question-card">
+      <h3>{{ q.question }}</h3>
+      <div class="options">
+        <button *ngFor="let opt of q.options"
+                [ngClass]="{'selected': q.userAnswer === opt, 'correct': q.userAnswer === opt && opt === q.reponse, 'wrong': q.userAnswer === opt && opt !== q.reponse}"
+                (click)="onSelectOption(opt, q)">
+          {{ opt }}
+        </button>
+      </div>
+
+      <input type="text" [(ngModel)]="q.userAnswer" placeholder="Réponse directe" class="answer-input"/>
+    </div>
+  </div>
+
+  <app-sccore [score]="score" [correct]="correctCount" [wrong]="wrongCount"></app-sccore>
+</div>
