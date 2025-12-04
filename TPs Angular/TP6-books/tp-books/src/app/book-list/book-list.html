@@ -1,0 +1,33 @@
+<div class="card">
+  <h3>Liste des livres ({{ books.length }})</h3>
+
+  <table class="book-table" *ngIf="books.length > 0; else empty">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Auteur</th>
+        <th (click)="chooseCategory('')">Catégorie</th>
+        <th>Disponible</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books; trackBy: trackById">
+        <td class="title">{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td class="cat">{{ book.category }}</td>
+        <td>
+          <span [class.bad]="!book.isAvailable">{{ book.isAvailable ? 'Oui' : 'Non' }}</span>
+        </td>
+        <td class="actions">
+          <button class="btn small" (click)="onEdit(book)">modifier</button>
+          <button class="btn small danger" (click)="onDelete(book.id)">supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #empty>
+    <div class="empty">Aucun livre à afficher.</div>
+  </ng-template>
+</div>

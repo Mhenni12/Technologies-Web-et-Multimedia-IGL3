@@ -1,0 +1,43 @@
+<div class="container">
+  <header class="header">
+    <h1> Book Catalog</h1>
+    <div class="stats">
+      <div>Total livres : <strong>{{ totalBooks }}</strong></div>
+      <div>Filtre : <input type="text" placeholder="Recherche titre / auteur / categorie"
+        [(ngModel)]="searchTerm"></div>
+      <div>
+        Tri : 
+        <select [(ngModel)]="sortBy">
+          <option value="none">Aucun</option>
+          <option value="category">Par catégorie</option>
+          <option value="availability">Par disponibilité</option>
+        </select>
+        <select *ngIf="sortBy === 'category'" [(ngModel)]="sortCategory">
+          <option value="">-- Toutes --</option>
+          <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-grid">
+    <section class="form-card">
+      <book-form
+        [categories]="categories"
+        [book]="editingBook"
+        (add)="addBook($event)"
+        (update)="updateBook($event)"
+        (cancel)="cancelEdit()"
+      ></book-form>
+    </section>
+
+    <section class="list-card">
+      <book-list
+        [books]="filteredBooks"
+        (edit)="startEdit($event)"
+        (delete)="deleteBook($event)"
+        (selectCategory)="sortCategory = $event"
+      ></book-list>
+    </section>
+  </main>
+</div>

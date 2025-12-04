@@ -1,0 +1,18 @@
+.card { padding:12px; border-radius:10px; background:#fff; }
+h3 { margin:0 0 10px; }
+
+.book-table { width:100%; border-collapse:collapse; }
+.book-table thead th { text-align:left; font-size:0.9rem; color:#374151; padding:8px 6px; border-bottom:1px solid #eef2f6; }
+.book-table tbody td { padding:10px 6px; vertical-align:middle; border-bottom:1px solid #f3f6f8; }
+
+.title { font-weight:600; color:#0f172a; }
+.cat { color:#6b7280; font-size:0.95rem; }
+
+.actions { display:flex; gap:8px; }
+.btn { padding:6px 8px; border-radius:6px; border:1px solid #eaeef6; background:#fff; cursor:pointer; }
+.btn.small { font-size:0.9rem; }
+.btn.danger { background:#fff7f7; border-color:#fee2e2; color:#ef4444; }
+
+.bad { color:#ef4444; font-weight:600; }
+
+.empty { padding:18px; color:#6b7280; text-align:center; }
