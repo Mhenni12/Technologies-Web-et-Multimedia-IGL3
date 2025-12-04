@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Formulaire Etudiant</h1>
+  <form #etudiantForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #spy>TODO: remove this: {{model.name}}
+    </div>
+    <div class="form-group">
+      <label for="Surname">SurName</label>
+      <input type="text" class="form-control" id="Surname">
+    </div>
+    <div class="form-group">
+      <label for="classe">Classe</label>
+      <select class="form-control" id="classe" required>
+        <option *ngFor="let pow of classes" [value]="pow">{{pow}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
